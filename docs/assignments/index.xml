@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assignments on DATA 606 - Statistics &amp; Probability - Spring 2024</title>
+    <link>/assignments/</link>
+    <description>Recent content in Assignments on DATA 606 - Statistics &amp; Probability - Spring 2024</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/assignments/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DAACS</title>
+      <link>/assignments/daacs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/daacs/</guid>
+      <description>Formative Assessments Formative assessments are a type of assessment that help students and teachers monitor student learning. These are low stakes assessments (i.e. you get credit for doing them, not based upon how you did). I will use the results to inform my instruction.
+Part 1 Complete this Google Form. The purpose of this survey is for us to get to know you better. There is no passing or failing, right or wrong answers.</description>
+    </item>
+    
+    <item>
+      <title>Participation</title>
+      <link>/assignments/participation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/participation/</guid>
+      <description>One Minute Papers A &amp;ldquo;one minute paper&amp;rdquo; (Angelo &amp;amp; Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear.</description>
+    </item>
+    
+    <item>
+      <title>Labs</title>
+      <link>/assignments/labs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/labs/</guid>
+      <description>These mini projects will have you explore statistical topics using R. You can use the startLab function in the DATA606 package to get started, or copy the templates from the links below. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.
+Introduction to R and RStudio (Template) Introduction to Data (Template) Probability (Template) Distributions of Random Variables (Template) Foundations for Statistical Inference Sampling Distributions (Template) Confidence Levels (Template)  Inference for Categorical Data (Template) Inference for Numerical Data (Template) Introduction to Linear Regression (Template) Multiple Linear Regerssion (Template)  </description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>/assignments/project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/project/</guid>
+      <description>The purpose of the data project is for you to conduct a reproducible analysis with a data set of your choosing. There are two components to the project, the proposal, which will be graded on a pass/fail basis, and the final report. The outline for each of these are provided in the templates. When submitting the assignments, include the R Markdown file (change the name to include your last name, for example Bryer-Proposal.</description>
+    </item>
+    
+    <item>
+      <title>Exams</title>
+      <link>/assignments/exams/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/exams/</guid>
+      <description>There will be a midterm and final exam. They will be posted on Blackboard during the time indicated on the course schedule.</description>
+    </item>
+    
+    <item>
+      <title>Homework</title>
+      <link>/assignments/homework_ungraded/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/homework_ungraded/</guid>
+      <description>Recommended Homework Questions to Complete for Practice. These will not be graded. The answers are at the end of the textbook. Successfully completing these will help you prepare for the midterm and final exams.
+Chapter 1: 1.09 (p. 20), 1.13 (p. 29), 1.27 (p. 31), 1.33 (p. 35)
+Chapter 2: 2.33 (p. 78), 2.09 (p. 57), 2.15 (p. 59), 2.25 (p. 76)
+Chapter 3: 3.5 (p. 92), 3.7 (p. 93), 3.</description>
+    </item>
+    
+  </channel>
+</rss>

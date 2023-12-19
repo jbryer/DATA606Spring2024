@@ -1,0 +1,162 @@
+---
+title: "Schedule"
+description: "Schedule"
+menu: "main"
+weight: 2
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+<p><em>Note: Schedule is subject to change. Last updated December 19, 2023 09:53AM.</em></p>
+<p><a href="https://sps.cuny.edu/academics/academic-calendar">CUNY SPS Academic Calendar</a></p>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialDate: '2024-01-01',
+      initialView: 'dayGridMonth',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      },
+      height: 'auto',
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      selectable: true,
+      selectMirror: true,
+      nowIndicator: true,
+      events: [
+{ title: "Chapter 1 - Intro to Data, R, and RStudio",
+  url: "/chapters/chapter1/",
+  start: '2024-01-25',
+  end: '2024-02-05' },
+ { title: "Chatper 2 - Summarizing Data",
+  url: "/chatpers/chapter2/",
+  start: '2024-02-05',
+  end: '2024-02-19' },
+ { title: "Chapter 3 - Probability",
+  url: "/chapters/chapter3",
+  start: '2024-02-19',
+  end: '2024-02-26' },
+ { title: "Chapter 4 - Distributions",
+  url: "/chapters/chapter4",
+  start: '2024-02-26',
+  end: '2024-03-04' },
+ { title: "Chatper 5 - Foundation for Inference",
+  url: "/chapters/chapter5",
+  start: '2024-03-04',
+  end: '2024-03-11' },
+ { title: "Midterm",
+  url: "/assesssments/midterm/",
+  start: '2024-03-16',
+  end: '2024-03-18' },
+ { title: "Chapter 6 - Inference for Categorical Data",
+  url: "/chapters/chapter6",
+  start: '2024-03-11',
+  end: '2024-03-18' },
+ { title: "Chapter 7 - Inference for Numerical Data",
+  url: "/chapters/chapter7",
+  start: '2024-03-18',
+  end: '2024-03-25' },
+ { title: "Chapter 8 - Linear Regression",
+  url: "/chapters/chapter8",
+  start: '2024-03-25',
+  end: '2024-04-08' },
+ { title: "Spring Break",
+  start: '2024-04-22',
+  end: '2024-05-01' },
+ { title: "Chapter 9 - Multiple & Logistic Regression",
+  url: "/chapters/chapter9",
+  start: '2024-04-08',
+  end: '2024-04-22' },
+ { title: "Intro to Bayesian Analysis",
+  url: "/chatpers/bayesian/",
+  start: '2024-05-01',
+  end: '2024-05-16' },
+ { title: "Final Exam",
+  url: "/assesssments/final/",
+  start: '2024-05-15',
+  end: '2024-05-20' },
+ { title: 'Intro to the Course',
+  url: "/course-overview/meetups",
+  start: '2024-01-25T12:30:00',
+  end: '2024-01-25T13:30:00' },
+ { title: 'Intro to Data',
+  url: "/course-overview/meetups",
+  start: '2024-01-31T20:00:00',
+  end: '2024-01-31T21:00:00' },
+ { title: 'Summarizing Data Part 1',
+  url: "/course-overview/meetups",
+  start: '2024-02-07T20:00:00',
+  end: '2024-02-07T21:00:00' },
+ { title: 'Summarizing Data Part 2',
+  url: "/course-overview/meetups",
+  start: '2024-02-14T20:00:00',
+  end: '2024-02-14T21:00:00' },
+ { title: 'Probability',
+  url: "/course-overview/meetups",
+  start: '2024-02-21T19:00:00',
+  end: '2024-02-21T20:00:00' },
+ { title: 'Distributions',
+  url: "/course-overview/meetups",
+  start: '2024-02-28T20:00:00',
+  end: '2024-02-28T21:00:00' },
+ { title: 'Foundation for Inference',
+  url: "/course-overview/meetups",
+  start: '2024-03-06T20:00:00',
+  end: '2024-03-06T21:00:00' },
+ { title: 'Inference for Categorical Data',
+  url: "/course-overview/meetups",
+  start: '2024-03-13T20:00:00',
+  end: '2024-03-13T21:00:00' },
+ { title: 'Inference for Numerical Data',
+  url: "/course-overview/meetups",
+  start: '2024-03-20T20:00:00',
+  end: '2024-03-20T21:00:00' },
+ { title: 'Linear Regression Part 1',
+  url: "/course-overview/meetups",
+  start: '2024-03-27T20:00:00',
+  end: '2024-03-27T21:00:00' },
+ { title: 'Linear Regression Part 2',
+  url: "/course-overview/meetups",
+  start: '2024-04-03T20:00:00',
+  end: '2024-04-03T21:00:00' },
+ { title: 'Maximum Likelihood Estimation and Logistic Regression',
+  url: "/course-overview/meetups",
+  start: '2024-04-10T20:00:00',
+  end: '2024-04-10T21:00:00' },
+ { title: 'Logistic Regression',
+  url: "/course-overview/meetups",
+  start: '2024-04-17T20:00:00',
+  end: '2024-04-17T21:00:00' },
+ { title: 'Spring Break - No Meetup',
+  start: 'NA',
+  end: 'NA' },
+ { title: 'Multiple Regression',
+  url: "/course-overview/meetups",
+  start: '2024-05-01T20:00:00',
+  end: '2024-05-01T21:00:00' },
+ { title: 'Bayesian Analysis',
+  url: "/course-overview/meetups",
+  start: '2024-05-08T20:00:00',
+  end: '2024-05-08T21:00:00' },
+ { title: 'Final Meetup',
+  url: "/course-overview/meetups",
+  start: '2024-05-15T20:00:00',
+  end: '2024-05-15T21:00:00' }
+      ]
+    });
+
+    calendar.render();
+  });
+
+</script>
+<div id="calendar">
+
+</div>
+<p><a href="/Course_Calendar.ics">Click here to import the course calendar into your calendar application</a></p>

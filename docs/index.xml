@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on DATA 606 - Statistics &amp; Probability - Spring 2024</title>
+    <link>/</link>
+    <description>Recent content in Home on DATA 606 - Statistics &amp; Probability - Spring 2024</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Dec 2023 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chapter 1</title>
+      <link>/chapters/chapter1/</link>
+      <pubDate>Sat, 29 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/chapters/chapter1/</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } });   Introduction to Data Learning Objectives  Identify the type of variables (e.g. numerical or categorical; discrete or continuous; ordered or not ordered). Identify the relationship between multiple variables (i.e. independent vs. dependent). Define variables that are not associated as independent.</description>
+    </item>
+    
+    <item>
+      <title>DAACS</title>
+      <link>/assignments/daacs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/daacs/</guid>
+      <description>Formative Assessments Formative assessments are a type of assessment that help students and teachers monitor student learning. These are low stakes assessments (i.e. you get credit for doing them, not based upon how you did). I will use the results to inform my instruction.
+Part 1 Complete this Google Form. The purpose of this survey is for us to get to know you better. There is no passing or failing, right or wrong answers.</description>
+    </item>
+    
+    <item>
+      <title>Instructors</title>
+      <link>/course-overview/instructor/</link>
+      <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
+      
+      <guid>/course-overview/instructor/</guid>
+      <description>Jason Bryer, Ph.D. Email: jason.bryer@cuny.edu
+I am currently an Assistant Professor in Data Science and Information Systems at the City University of New York. Additionally, I am a consultant with Cornell University where he has developed a research and data collection platform for New York State’s Office of Special Education (https://data.osepartnership.org). Prior to joining CUNY, I was Executive Director at Excelsior College where he has served as Principal Investigator of the FIPSE First in the World grant to develop and research the Diagnostic Assessment and Achievement of College Skills along with supporting research and evaluation of other grants at the institution.</description>
+    </item>
+    
+    <item>
+      <title>Chapter 2</title>
+      <link>/chapters/chapter2/</link>
+      <pubDate>Sat, 29 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/chapters/chapter2/</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } });   Summarizing Data Learning Outcomes  Use appropriate visualizations for different types of data (e.g. histogram, barplot, scatterplot, boxplot, etc.). Use different measures of center and spread and be able to describe the robustness of different statistics. Describe the shape of distributions vis-a-vis histograms and boxplots.</description>
+    </item>
+    
+    <item>
+      <title>Participation</title>
+      <link>/assignments/participation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/participation/</guid>
+      <description>One Minute Papers A &amp;ldquo;one minute paper&amp;rdquo; (Angelo &amp;amp; Cross, 1993) is a short written reflection to be completed after each class meetup. You are to answer two questions: 1) What was the most important thing you learned during this class? and 2) What important question remains unanswered for you? Our goal is to give you a moment to reflect on the most important concepts presented were and to provide me with information about what concepts are still unclear.</description>
+    </item>
+    
+    <item>
+      <title>Schedule</title>
+      <link>/course-overview/schedule/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/course-overview/schedule/</guid>
+      <description>Note: Schedule is subject to change. Last updated December 19, 2023 09:53AM.
+CUNY SPS Academic Calendar
+ document.addEventListener(&#39;DOMContentLoaded&#39;, function() { var calendarEl = document.getElementById(&#39;calendar&#39;); var calendar = new FullCalendar.Calendar(calendarEl, { initialDate: &#39;2024-01-01&#39;, initialView: &#39;dayGridMonth&#39;, headerToolbar: { left: &#39;prev,next today&#39;, center: &#39;title&#39;, right: &#39;dayGridMonth,timeGridWeek,timeGridDay,listWeek&#39; }, height: &#39;auto&#39;, navLinks: true, // can click day/week names to navigate views editable: true, selectable: true, selectMirror: true, nowIndicator: true, events: [ { title: &#34;Chapter 1 - Intro to Data, R, and RStudio&#34;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 3</title>
+      <link>/chapters/chapter3/</link>
+      <pubDate>Sat, 29 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/chapters/chapter3/</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } });   Probability Learning Outcomes  Define trial, outcome, and sample space. Define and describe the law of large numbers. Distinguish disjoint (also called mutually exclusive) and independent events. Use Venn diagrams to represent events and their probabilities. Describe probability distributions.</description>
+    </item>
+    
+    <item>
+      <title>Meetups</title>
+      <link>/course-overview/meetups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/course-overview/meetups/</guid>
+      <description>There will be weekly meetups. You are encouraged to attend as many as you can but recordings will generally be available the day after the meetup.
+Join Zoom Meeting: http://zoom.data606.net or https://us02web.zoom.us/j/86462823125?pwd=L3RsRERFQmtRK0ZEZTNxVE5QTGZCZz09
+Please note: Students who participate in this class with their camera on or use a profile image are agreeing to have their video or image recorded solely for the purpose of creating a record for students enrolled in the class to refer to, including those enrolled students who are unable to attend live.</description>
+    </item>
+    
+    <item>
+      <title>Chapter 4</title>
+      <link>/chapters/chapter4/</link>
+      <pubDate>Sat, 29 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/chapters/chapter4/</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } });   Distributions of Random Variables Learning Outcomes  Define the standardized (Z) score of a data point as the number of standard deviations it is away from the mean: $Z = \frac{x - \mu}{\sigma}$. Use the Z score  if the distribution is normal: to determine the percentile score of a data point (using technology or normal probability tables) regardless of the shape of the distribution: to assess whether or not the particular observation is considered to be unusual (more than 2 standard deviations away from the mean)   Depending on the shape of the distribution determine whether the median would have a negative, positive, or 0 Z score.</description>
+    </item>
+    
+    <item>
+      <title>Labs</title>
+      <link>/assignments/labs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/labs/</guid>
+      <description>These mini projects will have you explore statistical topics using R. You can use the startLab function in the DATA606 package to get started, or copy the templates from the links below. Please submit a PDF (preferred) or HTML file along with your Rmarkdown file. Be sure to answer all questions in lab, not just the on your own section. Labs should be submitted on Blackboard.
+Introduction to R and RStudio (Template) Introduction to Data (Template) Probability (Template) Distributions of Random Variables (Template) Foundations for Statistical Inference Sampling Distributions (Template) Confidence Levels (Template)  Inference for Categorical Data (Template) Inference for Numerical Data (Template) Introduction to Linear Regression (Template) Multiple Linear Regerssion (Template)  </description>
+    </item>
+    
+    <item>
+      <title>Chapter 5</title>
+      <link>/chapters/chapter5/</link>
+      <pubDate>Sat, 29 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/chapters/chapter5/</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } });   Foundations for Inference Learning Outcomes  Define sample statistic as a point estimate for a population parameter, for example, the sample proportion is used to estimate the population proportion, and note that point estimate and sample statistic are synonymous.</description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>/assignments/project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/project/</guid>
+      <description>The purpose of the data project is for you to conduct a reproducible analysis with a data set of your choosing. There are two components to the project, the proposal, which will be graded on a pass/fail basis, and the final report. The outline for each of these are provided in the templates. When submitting the assignments, include the R Markdown file (change the name to include your last name, for example Bryer-Proposal.</description>
+    </item>
+    
+    <item>
+      <title>Chapter 6</title>
+      <link>/chapters/chapter6/</link>
+      <pubDate>Sat, 29 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/chapters/chapter6/</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } });   Inference for Categorical Data Learning Outcomes  Define population proportion $p$ (parameter) and sample proportion $\hat{p}$ (point estimate). Calculate the sampling variability of the proportion, the standard error, as [ SE = \sqrt{\frac{p(1-p)}{n}}, ] where $p$ is the population proportion.</description>
+    </item>
+    
+    <item>
+      <title>Exams</title>
+      <link>/assignments/exams/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/exams/</guid>
+      <description>There will be a midterm and final exam. They will be posted on Blackboard during the time indicated on the course schedule.</description>
+    </item>
+    
+    <item>
+      <title>Chapter 7</title>
+      <link>/chapters/chapter7/</link>
+      <pubDate>Sat, 29 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/chapters/chapter7/</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } });   Inference for Numerical Data Learning Outcomes  Use the $t$-distribution for inference on a single mean, difference of paired (dependent) means, and difference of independent means. Explain why the $t$-distribution helps make up for the additional variability introduced by using $s$ (sample standard deviation) in calculation of the standard error, in place of $\sigma$ (population standard deviation).</description>
+    </item>
+    
+    <item>
+      <title>Chapter 8</title>
+      <link>/chapters/chapter8/</link>
+      <pubDate>Sat, 29 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/chapters/chapter8/</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } });   Introduction to Linear Regression Learning Outcomes  Define the explanatory variable as the independent variable (predictor), and the response variable as the dependent variable (predicted). Plot the explanatory variable ($x$) on the x-axis and the response variable ($y$) on the y-axis, and fit a linear regression model $y = \beta_0 + \beta_1 x$ where $\beta_0$ is the intercept, and $\beta_1$ is the slope.</description>
+    </item>
+    
+    <item>
+      <title>Chapter 9</title>
+      <link>/chapters/chapter9/</link>
+      <pubDate>Sat, 29 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/chapters/chapter9/</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } });   Multiple and Logistic Regression Learning Outcomes  Define the multiple linear regression model as $$\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k$$ where there are $k$ predictors (explanatory variables). Interpret the estimate for the intercept ($b_0$) as the expected value of $y$ when all predictors are equal to 0, on average.</description>
+    </item>
+    
+    <item>
+      <title>Bayesian</title>
+      <link>/chapters/bayesian/</link>
+      <pubDate>Sat, 29 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/chapters/bayesian/</guid>
+      <description>Bayesian Analysis Supplemental Readings  Chapter 17 of Learning Statistics with R (Navarro, version 0.6) Fitting a Model by Maximum Likelihood (Collier, 2013). Kruschke&#39;s website for Doing Bayesian Data Analysis Kruschke&#39;s blog Andrew Gelman&#39;s blog - Posts about bayesian statistics  Videos Rasmus Bååth&#39;s Introduction to Bayesian Data Analysis Video Series    John Kruschke&#39;s Video Series Bayesian Methods Interpret Data Better
+ Bayesian Estimation Supersedes the t Test</description>
+    </item>
+    
+    <item>
+      <title>Homework</title>
+      <link>/assignments/homework_ungraded/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/assignments/homework_ungraded/</guid>
+      <description>Recommended Homework Questions to Complete for Practice. These will not be graded. The answers are at the end of the textbook. Successfully completing these will help you prepare for the midterm and final exams.
+Chapter 1: 1.09 (p. 20), 1.13 (p. 29), 1.27 (p. 31), 1.33 (p. 35)
+Chapter 2: 2.33 (p. 78), 2.09 (p. 57), 2.15 (p. 59), 2.25 (p. 76)
+Chapter 3: 3.5 (p. 92), 3.7 (p. 93), 3.</description>
+    </item>
+    
+    <item>
+      <title>Textbooks</title>
+      <link>/course-overview/textbooks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/course-overview/textbooks/</guid>
+      <description>Required 
+Diez, D.M., Barr, C.D., &amp;amp; Çetinkaya-Rundel, M. (2019). OpenIntro Statistics (4th Ed).
+ This is an open source textbook and can be downloaded in PDF format here, from the OpenIntro website, or a printed copy can be ordered from Amazon.
+  
+Navarro, D. (2018, version 0.6). Learning Statistics with R
+ This is free textbook that supplements a lot of the material covered in Diez and Barr.</description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>/course-overview/software/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/course-overview/software/</guid>
+      <description>R and RStudio We will make use of R, an open source statistics program and language. Be sure to install R and RStudio on your own computers within the first few days of the class.
+ R - download for Windows, Mac, or Linux. RStudio - Download Windows, Mac, or Linux versions from here  If using Windows, you also need to download RTools.
+LaTeX LaTeX is a typesetting language for preparing documents.</description>
+    </item>
+    
+    <item>
+      <title>Materials</title>
+      <link>/course-overview/materials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/course-overview/materials/</guid>
+      <description> These are supplemental materials. Click to download.
+ Chapter 28_Anova.pdf Cheatsheets_2019.pdf Classical_Machine_Learning.JPG ElementalGraphics4ANOVA.RP+JH.pdf ggplot_aesthetics_cheatsheet.png Kruschke-Liddell2018_Article_BayesianDataAnalysisForNewcome.pdf R_Syntax_Comparison.jpeg Riezler2021_EmpiricalMethods-draft.pdf stats_handout.pdf Textbooks  lsr-0.6.pdf os4.pdf ProbStatBook.pdf Supplemental  OpenIntro_extra_interaction_effects.pdf OpenIntro_extra_nonlinear_relationships.pdf OpenIntro_handout.pdf os2_extra_inference_guide.pdf os2_prob_tables.pdf os4_tablet.pdf   Thirteen Ways to Look at the Correlation Coefficient.pdf What_Is_Data_Science.pdf WhatisDataScienceFinalMay162018.pdf When to use what test.pdf  </description>
+    </item>
+    
+    <item>
+      <title>Welcome to DATA606!</title>
+      <link>/blog/00-welcome-to-data606/</link>
+      <pubDate>Tue, 19 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/00-welcome-to-data606/</guid>
+      <description>
+
+
+&lt;p&gt;Welcome to DATA606! Your instructors will be &lt;a href=&#34;https://bryer.org&#34;&gt;Dr. Jason Bryer&lt;/a&gt; and Dr. Angela Lui. Couple of important notes as you get started:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The course syllabus located here: &lt;a href=&#34;https://spring2024.data606.net/course-overview&#34; class=&#34;uri&#34;&gt;https://spring2024.data606.net/course-overview&lt;/a&gt;. We will post all course materials there. Blackboard will be used primarily for submitting assignments. &lt;strong&gt;Please read the syllabus carefully!&lt;/strong&gt; Send us any questions you may still have about the course.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Complete this &lt;a href=&#34;https://forms.gle/55WH1ZeMdqywHCLz8&#34;&gt;Google Form&lt;/a&gt; as soon as possible. We will use some of the data (in aggregate) in the meetup.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;&#34;&gt;Join the Slack channel by clicking here&lt;/a&gt; (or use your &lt;span class=&#34;citation&#34;&gt;@sps.cuny.edu&lt;/span&gt; email address). This will be our primary mode of communication. For private communications, you can either send private Slack messages or email us at &lt;a href=&#34;mailto:jason.bryer@cuny.edu&#34;&gt;jason.bryer@cuny.edu&lt;/a&gt; and &lt;a href=&#34;mailto:angela.lui@cuny.edu&#34;&gt;angela.lui@cuny.edu&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Complete the self-regulated learning assessment in DAACS. Visit &lt;a href=&#34;/assignments/daacs/&#34;&gt;/assignments/daacs/&lt;/a&gt; for more information.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Once you go through the syllabus, try starting Lab 1 as soon as you can. This will require you to install R and RStudio and will help get you get acquainted with R. See the &lt;a href=&#34;/course-overview/software/&#34;&gt;software page&lt;/a&gt; for more information about the software we will use for this course.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The best way to reach us is on Slack. If you would prefer to talk on the phone or setup a Zoom session, it is best to suggest some times by email first.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Our Meetups will be on Wednesdays from 8:00pm to 9:00pm. &lt;strong&gt;We expect everyone to attend or watch the Meetups.&lt;/strong&gt; Important information will be shared during the meetups that will not be available in any other format.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We am looking forward to getting to know everyone and a fantastic semester! Good luck!&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

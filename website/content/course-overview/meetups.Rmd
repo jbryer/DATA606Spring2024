@@ -1,0 +1,57 @@
+---
+title: "Meetups"
+description: "Meetups"
+menu: "main"
+weight: 3
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r schedule-setup, echo=FALSE, warning=FALSE, message=FALSE}
+library(readxl)
+library(lubridate)
+# library(flextable)
+library(kableExtra)
+
+options(knitr.kable.NA = '')
+
+lastModified <- format(file.info('../../../Schedule.xlsx')[1,]$mtime, '%B %d, %Y %I:%M%p')
+
+meetups <- read_excel('../../../Schedule.xlsx', sheet = 'Meetups')
+meetups$day <- as.Date(meetups$Date)
+meetups$label <- paste0('Meetup ', meetups$StartTime, '\n', meetups$Topic)
+# meetups$label <- meetups$Topic
+meetups$color <- '#4A235A'
+meetups$fill <- NA
+```
+
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE, error=FALSE}
+source('../../../config.R')
+```
+
+There will be weekly meetups. You are encouraged to attend as many as you can but recordings will generally be available the day after the meetup.
+
+Join Zoom Meeting:  http://zoom.data606.net or https://us02web.zoom.us/j/86462823125?pwd=L3RsRERFQmtRK0ZEZTNxVE5QTGZCZz09  
+
+
+**Please note:** *Students who participate in this class with their camera on or use a profile image are agreeing to have their video or image recorded solely for the purpose of creating a record for students enrolled in the class to refer to, including those enrolled students who are unable to attend live.  If you are unwilling to consent to have your profile or video image recorded, be sure to keep your camera off and do not use a profile image. Likewise, students who un-mute during class and participate orally are agreeing to have their voices recorded.  If you are not willing to consent to have your voice recorded during class, you will need to keep your mute button activated and communicate exclusively using the "chat" feature, which allows students to type questions and comments live.*
+
+
+**[One Minute Paper](`r one_minute_paper`) - Complete this Google form after each class meetup (whether attended live or watched the recording).**
+
+```{r schedule-table, echo=FALSE, results='asis'}
+# meetups$Date <- format(meetups$Date, '%a, %b %d')
+meetups$Date <- format(meetups$Date, format = '%a, %b %d, %Y')
+links <- which(!is.na(meetups$Slides))
+if(length(links) > 0) {
+	meetups[links,]$Topic <- paste0('[', meetups[links,]$Topic, '](/blog/', tolower(meetups[links,]$Slides), '/)')
+}
+
+knitr::kable(meetups[,c('Date','StartTime','Topic')], ) %>%
+	kable_styling(full_width = F)
+# meetups[,c('Date','StartTime','Topic','Resources')] %>% 
+# 	regulartable() %>% autofit()
+
+```
+
