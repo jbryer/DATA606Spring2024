@@ -1,9 +1,9 @@
 year <- 2024
 semester <- 'Spring'
 github_link <- "DATA606Spring2024"
-one_minute_paper <- 'https://forms.gle/Fd2nL4vdRJ95S3NH6'
+one_minute_paper <- 'https://forms.gle/Jcw55CYvc6Ym8A5F7'
 one_minute_paper_results <- "https://docs.google.com/spreadsheets/d/1zpSctUcCJvZpu52ZOc2OMF_2mCNrMZFVKiA9-rhlHUA/edit?resourcekey#gid=232744019"
-formative_assessment <- 'https://forms.gle/55WH1ZeMdqywHCLz8'
+formative_assessment <- 'https://forms.gle/ywT9xeUDyRx6AhMbA'
 formative_assessmnet_results <- 'https://docs.google.com/spreadsheets/d/1oHoO8d5FzlgHsagYOgzS5duaTJRVMrORebqF_JsFYhc/edit?resourcekey#gid=82996459'
 slack_invite_link <- 'https://join.slack.com/t/cuny-96b6194/shared_invite/zt-2apyhbeq8-h2XHc3syAWw2BME1V7m41w'
 
