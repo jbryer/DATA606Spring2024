@@ -6,10 +6,19 @@
     <description>Recent content in Categories on DATA 606 - Statistics &amp; Probability - Spring 2024</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jan 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Meetups</title>
+      <link>/categories/meetups/</link>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/meetups/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>R</title>

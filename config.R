@@ -6,15 +6,16 @@ one_minute_paper_results <- "https://docs.google.com/spreadsheets/d/1zpSctUcCJvZ
 formative_assessment <- 'https://forms.gle/ywT9xeUDyRx6AhMbA'
 formative_assessmnet_results <- 'https://docs.google.com/spreadsheets/d/1oHoO8d5FzlgHsagYOgzS5duaTJRVMrORebqF_JsFYhc/edit?resourcekey#gid=82996459'
 slack_invite_link <- 'https://join.slack.com/t/cuny-96b6194/shared_invite/zt-2apyhbeq8-h2XHc3syAWw2BME1V7m41w'
+slack_link <- 'https://DATA606Spring2024.slack.com'
 
 # remotes::install_github("gadenbuie/countdown")
-# devtools::install_github("ropenscilabs/icon")
+# remotes::install_github("ropenscilabs/icon")
 # icons::download_fontawesome()
-# devtools::install_github("thomasp85/patchwork")
+# remotes::install_github("thomasp85/patchwork")
 
 library("knitr")
 library("tidyverse")
-library("countdown")
+# library("countdown")
 library("likert")
 library("tm")
 library("SnowballC")
