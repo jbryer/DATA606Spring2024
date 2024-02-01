@@ -6,10 +6,25 @@
     <description>Recent content in Annoucement on DATA 606 - Statistics &amp; Probability - Spring 2024</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/annoucement/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Intro to Data</title>
+      <link>/blog/00-intro_to_data/</link>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/00-intro_to_data/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;a href=&#34;/slides/00-Intro_to_Data.html#1&#34;&gt;Click here&lt;/a&gt; to open the slides (&lt;a href=&#34;/slides/00-Intro_to_Data.pdf&#34;&gt;PDF&lt;/a&gt;).&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/0vL9mEjhEeE&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+</description>
+    </item>
     
     <item>
       <title>Intro to the Course</title>
