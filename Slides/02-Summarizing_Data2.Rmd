@@ -315,11 +315,17 @@ For data visualization:
 * Data visualization cheat sheet: https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf
 
 ---
+class: left, font140
 # One Minute Paper
 
-Complete the one minute paper: `r one_minute_paper`
-
+.pull-left[
 1. What was the most important thing you learned during this class?
-
 2. What important question remains unanswered for you?
+]
+.pull-right[
+```{r, echo=FALSE, fig.width=5, fig.height=5}
+qrcode::qr_code(one_minute_paper) |> plot(col = c('#FAFAFA', 'black'))
+```
+]
 
+`r one_minute_paper`

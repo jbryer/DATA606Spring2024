@@ -492,13 +492,13 @@ The *Binomial* distribution describes the probability of having exactly k succes
 ---
 # Choose Function
 
-The choose function is useful for calculating the number of ways to choose k successes in n trials.
+The choose function is useful for calculating the number of ways to choose k successes in *n* trials.
 
-$$ \left( \begin{matrix} n \\ k \end{matrix} \right) =\frac { n! }{ k!(n-k)! }  $$
+$$ \left( \begin{matrix} n \\\\ k \end{matrix} \right) =\frac { n! }{ k!(n-k)! }  $$
 
 For example, :
 
-$$ \left( \begin{matrix} 9 \\ 2 \end{matrix} \right) =\frac { 9! }{ 2!(9-2)! } =\frac { 9\times 8\times 7! }{ 2\times 1\times 7! } =\frac { 72 }{ 2 } =36 $$
+$$ \left( \begin{matrix} 9 \\\\ 2 \end{matrix} \right) =\frac { 9! }{ 2!(9-2)! } =\frac { 9\times 8\times 7! }{ 2\times 1\times 7! } =\frac { 72 }{ 2 } =36 $$
 
 ```{r}
 choose(9,2)
@@ -509,7 +509,7 @@ choose(9,2)
 
 If p represents probability of success, (1 − p) represents probability of failure, n represents number of independent trials, and k represents number of successes
 
-$$ P(k\quad successes\quad in\quad n\quad trials)=\left( \begin{matrix} n \\ k \end{matrix} \right) { p }^{ k }{ (1-p) }^{ (n-k) } $$
+$$ P(k\quad successes\quad in\quad n\quad trials)=\left( \begin{matrix} n \\\\ k \end{matrix} \right) { p }^{ k }{ (1-p) }^{ (n-k) } $$
 
 
 ---
@@ -528,9 +528,14 @@ https://shiny.rit.albany.edu/stat/binomial/
 class: left, font140
 # One Minute Paper
 
-Complete the one minute paper: 
-`r one_minute_paper`
-
+.pull-left[
 1. What was the most important thing you learned during this class?
 2. What important question remains unanswered for you?
+]
+.pull-right[
+```{r, echo=FALSE, fig.width=5, fig.height=5}
+qrcode::qr_code(one_minute_paper) |> plot(col = c('#FAFAFA', 'black'))
+```
+]
 
+`r one_minute_paper`
