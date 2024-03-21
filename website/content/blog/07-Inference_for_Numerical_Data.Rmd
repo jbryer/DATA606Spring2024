@@ -1,0 +1,22 @@
+---
+title: "Inference for Numerical Data"
+author: "Jason Bryer and Angela Lui"
+date: 2024-03-20
+draft: false
+categories: ["Meetups"]
+tags: ["Annoucement"]
+---
+
+
+[Click here](/slides/07-Inference_for_Numerical_Data.html#1) to open the slides ([PDF](/slides/07-Inference_for_Numerical_Data.pdf)).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LQLy-jTb34M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!--more-->
+
+[Click here](/slides/07-Inference_for_Numerical_Data.html#1) to open the slides ([PDF](/slides/07-Inference_for_Numerical_Data.pdf)).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LQLy-jTb34M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
