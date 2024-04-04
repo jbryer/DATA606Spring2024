@@ -5,7 +5,7 @@ hugo_version <- '0.60.0'
 # remotes::install_github("jhelvy/renderthis")
 # remotes::install_github('rstudio/chromote')
 # install.packages('pdftools')
-# Need to install with Homebrew: 
+# Need to install with Homebrew:
 # brew install poppler
 # brew install libxrender
 # credentials::set_github_pat()
@@ -13,7 +13,7 @@ hugo_version <- '0.60.0'
 
 # Builds the course website.
 
-library(renderthis)
+library(renderthis) # remotes::install_github("jhelvy/renderthis")
 library(readxl)
 
 # Copy the Slides and supplemental materials to the docs/folder
@@ -54,7 +54,7 @@ for(i in tocopy) {
 				print(e)
 			}, finally = { setwd(wd) })
 		}
-		
+
 		if(file.exists(pdf)) { # Copy PDF to docs directory
 			file.copy(pdf, paste0('docs/slides/', basename(pdf)))
 		}
@@ -67,7 +67,7 @@ for(i in 1:nrow(meetups)) {
 	if(!is.na(meetups[i,]$Slides) | !is.na(meetups[i,]$Youtube)) {
 		blogfile <- paste0('website/content/blog/', as.Date(meetups[i,]$Date), '.Rmd')
 		blogpath <- paste0('/blog/', as.Date(meetups[i,]$Date), '/')
-		
+
 		blogcontent <- ''
 		if(!is.na(meetups[i,]$Slides)) {
 			blogcontent <- paste0(blogcontent, '[Click here](/slides/', meetups[i,]$Slides, '.html#1) to open the slides ([PDF](/slides/', meetups[i,]$Slides, '.pdf)).\n\n')
@@ -81,9 +81,9 @@ for(i in 1:nrow(meetups)) {
 		if(!is.na(meetups[i,]$Resources)) {
 			additionalcontent <- meetups[i,]$Resources
 		}
-		
+
 		pubdate <- as.character(min(as.Date(meetups[i,]$Date), Sys.Date()))
-		
+
 		cat('---', '\n',
 			'title: "', meetups[i,]$Topic, '"\n',
 			'author: "Jason Bryer and Angela Lui"', '\n',
