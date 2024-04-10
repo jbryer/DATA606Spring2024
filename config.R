@@ -8,8 +8,8 @@ formative_assessmnet_results <- 'https://docs.google.com/spreadsheets/d/1oHoO8d5
 slack_invite_link <- 'https://join.slack.com/t/cuny-96b6194/shared_invite/zt-2apyhbeq8-h2XHc3syAWw2BME1V7m41w'
 slack_link <- 'https://DATA606Spring2024.slack.com'
 
-# remotes::install_github("gadenbuie/countdown")
 # remotes::install_github("ropenscilabs/icon")
+# remotes::install_github("gadenbuie/countdown", subdir = "r")
 # icons::download_fontawesome()
 # remotes::install_github("thomasp85/patchwork")
 

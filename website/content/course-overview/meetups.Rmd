@@ -48,8 +48,7 @@ if(length(links) > 0) {
 	meetups[links,]$Topic <- paste0('[', meetups[links,]$Topic, '](/blog/', tolower(meetups[links,]$Slides), '/)')
 }
 
-knitr::kable(meetups[,c('Date','StartTime','Topic')], ) %>%
-	kable_styling(full_width = F)
+knitr::kable(meetups[,c('Date','StartTime','Topic')], ) #|> kable_styling(full_width = F)
 # meetups[,c('Date','StartTime','Topic','Resources')] %>% 
 # 	regulartable() %>% autofit()
 
