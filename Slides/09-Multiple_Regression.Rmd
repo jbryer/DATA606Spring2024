@@ -1,0 +1,602 @@
+---
+title: "Multiple Linear Regression"
+subtitle: "DATA 606 - Statistics & Probability for Data Analytics"
+author: Jason Bryer, Ph.D. and Angela Lui, Ph.D.
+date: "April 17, 2024"
+output:
+  xaringan::moon_reader:
+    css: ["assets/mtheme_max.css", "assets/fonts_mtheme_max.css"]
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: solarized-light
+      highlightLanguage: R
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      navigation:
+        scroll: false
+    includes:
+      in_header: [assets/header.html]
+      after_body: [assets/insert-logo.html]
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+# Cartoons from https://github.com/allisonhorst/stats-illustrations
+# dplyr based upon https://allisonhorst.shinyapps.io/dplyr-learnr/#section-welcome
+
+source('../config.R')
+
+library(gganimate)
+library(magick)
+library(cowplot)
+library(DT)
+source('../R/roc.R')
+# library(titanic)
+# data("titanic")
+library(VisualStats)
+# library(VisualMLE)
+
+```
+
+class: center, middle, inverse, title-slide
+
+# `r metadata$title`
+## `r metadata$subtitle`
+### `r metadata$author`
+### `r metadata$date`
+
+---
+
+# One Minute Paper Results
+
+```{r, echo=FALSE}
+library(googlesheets4)
+omp <- read_sheet(one_minute_paper_results)
+omp <- omp %>% dplyr::filter(Topic == 'Logistic Regression (Chapter 9)')
+source('word_cloud.R')
+```
+
+.pull-left[
+**What was the most important thing you learned during this class?**
+```{r, echo=FALSE, fig.height=9}
+ompWordCloud(omp$`What was the most important thing you learned during this class?`)
+```
+]
+.pull-right[
+**What important question remains unanswered for you?**
+```{r, echo=FALSE, fig.height=9}
+ompWordCloud(omp$`What important question remains unanswered for you?`)
+```
+]
+
+
+
+---
+# Weight of Books
+
+```{r}
+allbacks <- read.csv('../course_data/allbacks.csv')
+head(allbacks)
+```
+
+From: Maindonald, J.H. & Braun, W.J. (2007). *Data Analysis and Graphics Using R, 2nd ed.*
+
+---
+# Weights of Books (cont) 
+
+```{r, echo=TRUE}
+lm.out <- lm(weight ~ volume, data=allbacks)
+```
+
+$$ \hat{weight} = `r round(lm.out$coefficients[[1]])` + `r prettyNum(lm.out$coefficients[[2]], digits=2)` volume $$
+$$ R^2 = `r round(cor(allbacks$weight, allbacks$volume) ^2 * 100)`\% $$
+
+```{r, echo=FALSE, fig.height=5}
+ggplot(allbacks, aes(x=volume, y=weight)) + geom_point() + geom_smooth(method='lm', formula = y ~ x)
+```
+
+---
+# Modeling weights of books using volume
+
+.code70[
+```{r}
+summary(lm.out)
+```
+]
+
+---
+# Weights of hardcover and paperback books 
+
+- Can you identify a trend in the relationship between volume and weight of hardcover and paperback books?
+
+```{r, echo=FALSE, fig.height=5}
+ggplot(allbacks, aes(x=volume, y=weight, color=cover, shape=cover)) + geom_point()
+```
+
+--
+
+- Paperbacks generally weigh less than hardcover books after controlling for book's volume.
+
+---
+# Modeling using volume and cover type
+
+.code70[
+```{r}
+lm.out2 <- lm(weight ~ volume + cover, data=allbacks)
+summary(lm.out2)
+```
+]
+
+---
+# Linear Model
+
+$$ `r printLaTeXFormula(lm.out2)` $$
+
+1. For **hardcover** books: plug in *0* for cover.  
+
+$$\hat{weight} = 197.96 + 0.72 volume - 184.05 \times 0 = 197.96 + 0.72 volume$$
+
+2. For **paperback** books: put in 1 for cover.
+$$\hat{weight} = 197.96 + 0.72 volume - 184.05 \times 1$$
+
+---
+# Visualizing the linear model 
+
+```{r, echo=FALSE}
+ggplot(allbacks, aes(x=volume, y=weight, color=cover, shape=cover)) + geom_point() + geom_smooth(method='lm', formula = y ~ x, fill=NA)
+```
+
+
+---
+# Interpretation of the regression coefficients
+
+<center>
+```{r, echo=FALSE, results='asis'}
+print(xtable::xtable(lm.out2), type='html')
+```
+</center>
+
+* **Slope of volume**: All else held constant, books that are 1 more cubic centimeter in volume tend to weigh about 0.72 grams more.
+* **Slope of cover**: All else held constant, the model predicts that paperback books weigh 184 grams lower than hardcover books.
+* **Intercept**: Hardcover books with no volume are expected on average to weigh 198 grams.
+	* Obviously, the intercept does not make sense in context. It only serves to adjust the height of the line.
+
+---
+# Modeling Poverty
+
+```{r}
+poverty <- read.table("../course_data/poverty.txt", h = T, sep = "\t")
+names(poverty) <- c("state", "metro_res", "white", "hs_grad", "poverty", "female_house")
+poverty <- poverty[,c(1,5,2,3,4,6)]
+head(poverty)
+```
+
+From: Gelman, H. (2007). *Data Analysis using Regression and Multilevel/Hierarchial Models.* Cambridge University Press.
+
+---
+# Modeling Poverty 
+
+```{r, eval = FALSE, echo=FALSE, fig.height=8}
+panel.cor <- function(x, y, digits=2, prefix="", cex.cor, ...){
+	usr <- par("usr"); on.exit(par(usr))
+	par(usr = c(0, 1, 0, 1))
+	r <- abs(cor(x, y))
+	rreal = cor(x, y)
+	txtreal <- format(c(rreal, 0.123456789), digits=digits)[1]
+	txt <- format(c(r, 0.123456789), digits=digits)[1]
+	if(missing(cex.cor)) cex.cor <- 0.8/strwidth(txt)
+	text(0.5, 0.5, txtreal, cex = cex.cor * r)
+}
+pairs(poverty[,c(2:6)], lower.panel = panel.cor, pch = 19)
+```
+
+```{r, echo=FALSE, fig.height=8}
+library(GGally)
+ggpairs(poverty[,c(2:6)])
+```
+
+---
+# Predicting Poverty using Percent Female Householder
+
+.code70[
+```{r}
+lm.poverty <- lm(poverty ~ female_house, data=poverty)
+summary(lm.poverty)
+```
+]
+
+---
+# % Poverty by % Female Household
+
+```{r, echo=FALSE}
+ggplot(poverty, aes(x=female_house, y=poverty)) + geom_point() + 
+	geom_smooth(method='lm', formula = y ~ x, fill=NA) + 
+	xlab('% Female Householder') + ylab('% in Poverty')
+```
+
+
+---
+# Another look at $R^2$
+
+$R^2$ can be calculated in three ways:
+
+1. square the correlation coefficient of x and y (how we have been
+calculating it)
+2. square the correlation coefficient of y and $\hat{y}$ 
+3. based on definition:  
+$$ R^2 = \frac{explained \quad variability \quad in \quad y}{total \quad variability \quad in \quad y} $$
+
+Using ANOVA we can calculate the explained variability and total variability in y.
+
+---
+# Sum of Squares
+
+```{r, results='asis'}
+anova.poverty <- anova(lm.poverty)
+print(xtable::xtable(anova.poverty, digits = 2), type='html')
+```
+
+--
+
+Sum of squares of *y*: ${ SS }_{ Total }=\sum { { \left( y-\bar { y }  \right)  }^{ 2 } } =480.25$ &rarr; **total variability**
+
+Sum of squares of residuals: ${ SS }_{ Error }=\sum { { e }_{ i }^{ 2 } } =347.68$ &rarr; **unexplained variability**
+
+Sum of squares of *x*: ${ SS }_{ Model }={ SS }_{ Total }-{ SS }_{ Error } = 132.57$ &rarr; **explained variability**  
+
+$$ R^2 = \frac{explained \quad variability \quad in \quad y}{total \quad variability \quad in \quad y} = \frac{132.57}{480.25} = 0.28 $$
+
+---
+# Why bother?
+
+* For single-predictor linear regression, having three ways to calculate the same value may seem like overkill.
+
+* However, in multiple linear regression, we can't calculate $R^2$ as the square of the correlation between *x* and *y* because we have multiple *x*s.
+
+* And next we'll learn another measure of explained variability, *adjusted $R^2$*, that requires the use of the third approach, ratio of explained and unexplained variability.
+
+---
+# Predicting poverty using % female household & % white
+
+.pull-left[.code70[
+```{r, results='asis'}
+lm.poverty2 <- lm(poverty ~ female_house + white, data=poverty)
+print(xtable::xtable(lm.poverty2), type='html')
+```
+] ]
+.pull-right[.code70[
+```{r, results = 'asis'}
+anova.poverty2 <- anova(lm.poverty2)
+print(xtable::xtable(anova.poverty2, digits = 3), type='html')
+```
+] ]
+
+<br/>
+
+$$ R^2 = \frac{explained \quad variability \quad in \quad y}{total \quad variability \quad in \quad y} = \frac{132.57 + 8.21}{480.25} = 0.29 $$
+
+---
+# Unique information
+
+.left-column[Does adding the variable `white` to the model add valuable information that wasn't provided by `female_house`?]
+
+```{r, echo=FALSE, fig.height=8}
+# pairs(poverty[,c(2:6)], lower.panel = panel.cor, pch = 19)
+p <- ggpairs(poverty[,c(2:6)], lower = list(continuous = wrap("smooth", se=FALSE, alpha = 0.7, size=0.5)))
+p[5,3] <- p[5,3] + theme(panel.border = element_rect(color = 'blue', fill = NA, size = 2))
+p[3,5] <- p[3,5] + theme(panel.border = element_rect(color = 'blue', fill = NA, size = 2))
+p
+```
+
+---
+# Collinearity between explanatory variables
+
+poverty vs % female head of household
+
+```{r, echo=FALSE, results='asis'}
+print(xtable::xtable(lm.poverty), type='html')
+```
+
+poverty vs % female head of household and % female household
+
+```{r, echo=FALSE, results='asis'}
+print(xtable::xtable(lm.poverty2), type='html')
+```
+
+Note the difference in the estimate for `female_house`.
+
+---
+# Collinearity between explanatory variables
+
+* Two predictor variables are said to be collinear when they are correlated, and this collinearity complicates model estimation.  
+Remember: Predictors are also called explanatory or independent variables. Ideally, they would be independent of each other.
+
+* We don't like adding predictors that are associated with each other to the model, because often times the addition of such variable brings nothing to the table. Instead, we prefer the simplest best model, i.e. *parsimonious* model.
+
+* While it's impossible to avoid collinearity from arising in observational data, experiments are usually designed to prevent correlation among predictors
+
+---
+# $R^2$ vs. adjusted $R^2$
+
+Model                      | $R^2$ | Adjusted $R^2$
+---------------------------|-------|----------------
+Model 1 (Single-predictor) | 0.28  | 0.26
+Model 2 (Multiple)         | 0.29  | 0.26
+
+* When any variable is added to the model $R^2$ increases.
+* But if the added variable doesn't really provide any new information, or is completely unrelated, adjusted $R^2$ does not increase.
+
+---
+# Adjusted $R^2$
+
+$${ R }_{ adj }^{ 2 }={ 1-\left( \frac { { SS }_{ error } }{ { SS }_{ total } } \times \frac { n-1 }{ n-p-1 }  \right)  }$$
+
+where *n* is the number of cases and *p* is the number of predictors (explanatory variables) in the model.
+
+* Because *p* is never negative, ${ R }_{ adj }^{ 2 }$ will always be smaller than $R^2$.
+* ${ R }_{ adj }^{ 2 }$ applies a penalty for the number of predictors included in the model.
+* Therefore, we choose models with higher ${ R }_{ adj }^{ 2 }$ over others.
+
+---
+class: inverse, middle, center
+# Predictive Modeling
+
+---
+# Example: Hours Studying Predicting Passing
+
+```{r}
+study <- data.frame(
+	Hours=c(0.50,0.75,1.00,1.25,1.50,1.75,1.75,2.00,2.25,2.50,2.75,3.00,
+			3.25,3.50,4.00,4.25,4.50,4.75,5.00,5.50),
+	Pass=c(0,0,0,0,0,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1)
+)
+study[sample(nrow(study), 5),]
+tab <- describeBy(study$Hours, group = study$Pass, mat = TRUE, skew = FALSE)
+tab$group1 <- as.integer(as.character(tab$group1))
+```
+
+
+---
+# Prediction
+
+Odds (or probability) of passing if studied **zero** hours?
+
+$$log(\frac{p}{1-p}) = -4.078 + 1.505 \times 0$$
+$$\frac{p}{1-p} = exp(-4.078) = 0.0169$$
+$$p = \frac{0.0169}{1.169} = .016$$
+
+--
+
+Odds (or probability) of passing if studied **4** hours?
+
+$$log(\frac{p}{1-p}) = -4.078 + 1.505 \times 4$$
+$$\frac{p}{1-p} = exp(1.942) = 6.97$$
+$$p = \frac{6.97}{7.97} = 0.875$$
+
+---
+# Fitted Values
+
+```{r}
+study[1,]
+logistic <- function(x, b0, b1) {
+	return(1 / (1 + exp(-1 * (b0 + b1 * x)) ))
+}
+logistic(.5, b0=-4.078, b1=1.505)
+```
+
+---
+# Model Performance
+
+The use of statistical models to predict outcomes, typically on new data, is called predictive modeling. Logistic regression is a common statistical procedure used for prediction. We will utilize a **confusion matrix** to evaluate accuracy of the predictions.
+
+```{r, echo=FALSE, out.width=1100}
+knitr::include_graphics('images/Confusion_Matrix.png')
+```
+
+---
+class: font80
+# Predicting Heart Attacks
+
+Source: https://www.kaggle.com/datasets/imnikhilanand/heart-attack-prediction?select=data.csv
+
+```{r, warning=FALSE}
+heart <- read.csv('../course_data/heart_attack_predictions.csv')
+heart <- heart |>
+	mutate_if(is.character, as.numeric) |>
+	select(!c(slope, ca, thal))
+str(heart)
+```
+
+Note: `num` is the diagnosis of heart disease (angiographic disease status) (i.e. Value 0: < 50% diameter narrowing -- Value 1: > 50% diameter narrowing)
+
+
+---
+# Missing Data
+
+We will save this for another day...
+
+```{r, message = FALSE, warning = FALSE}
+complete.cases(heart) |> table()
+mice_out <- mice::mice(heart, m = 1)
+heart <- mice::complete(mice_out)
+```
+
+
+---
+# Data Setup
+
+We will split the data into a training set (70% of observations) and validation set (30%).
+
+```{r}
+train.rows <- sample(nrow(heart), nrow(heart) * .7)
+heart_train <- heart[train.rows,]
+heart_test <- heart[-train.rows,]
+```
+
+This is the proportions of survivors and defines what our "guessing" rate is. That is, if we guessed no one had a heart attack, we would be correct 62% of the time.
+
+```{r}
+(heart_attack <- table(heart_train$num) %>% prop.table)
+```
+
+---
+class: font80
+# Model Training
+
+```{r}
+lr.out <- glm(num ~ ., data=heart_train, family=binomial(link = 'logit'))
+summary(lr.out)
+```
+
+---
+# Predicted Values
+
+```{r}
+heart_train$prediction <- predict(lr.out, type = 'response', newdata = heart_train)
+ggplot(heart_train, aes(x = prediction, color = num == 1)) + geom_density()
+```
+
+---
+# Results
+
+```{r}
+heart_train$prediction_class <- heart_train$prediction > 0.5
+tab <- table(heart_train$prediction_class, 
+			 heart_train$num) %>% prop.table() %>% print()
+```
+
+For the training set, the overall accuracy is `r round((tab[1,1] + tab[2,2]) * 100, digits = 2)`%. Recall that `r round(heart_attack[1] * 100, digits = 2)`% people did not have a heart attach. Therefore, the simplest model would be to predict that no one had a heart attack, which would mean we would be correct `r round(heart_attack[1] * 100, digits = 2)`% of the time. Therefore, our prediction model is `r  round((tab[1,1] + tab[2,2]) * 100 - heart_attack[1] * 100, digits = 2)`% better than guessing.
+
+---
+# Checking with the validation dataset
+
+```{r}
+(survived_test <- table(heart_test$num) %>% prop.table())
+heart_test$prediction <- predict(lr.out, newdata = heart_test, type = 'response')
+heart_test$prediciton_class <- heart_test$prediction > 0.5
+tab_test <- table(heart_test$prediciton_class, heart_test$num) %>%
+	prop.table() %>% print()
+```
+
+The overall accuracy is `r round((tab_test[1,1] + tab_test[2,2]) * 100, digits = 2)`%, or `r round( (tab_test[1,1] + tab_test[2,2] - max(survived_test) ) * 100, digits = 1)`% better than guessing.
+
+---
+# Receiver Operating Characteristic (ROC) Curve
+
+The ROC curve is created by plotting the true positive rate (TPR; AKA sensitivity) against the false positive rate (FPR; AKA probability of false alarm) at various threshold settings.
+
+```{r}
+roc <- calculate_roc(heart_train$prediction, heart_train$num == 1)
+summary(roc)
+```
+
+---
+# ROC Curve
+
+```{r}
+plot(roc)
+```
+
+---
+# ROC Curve
+
+```{r}
+plot(roc, curve = 'accuracy')
+```
+
+---
+class: font90
+# Caution on Interpreting Accuracy
+
+- [Loh, Sooo, and Zing](http://cs229.stanford.edu/proj2016/report/LohSooXing-PredictingSexualOrientationBasedOnFacebookStatusUpdates-report.pdf) (2016) predicted sexual orientation based on Facebook Status.
+
+- They reported model accuracies of approximately 90% using SVM, logistic regression and/or random forest methods.
+
+--
+
+- [Gallup](https://news.gallup.com/poll/234863/estimate-lgbt-population-rises.aspx) (2018) poll estimates that 4.5% of the Americal population identifies as LGBT.
+
+--
+
+- *My proposed model:* I predict all Americans are heterosexual.
+
+- The accuracy of my model is 95.5%, or *5.5% better than Facebook's model!*
+
+- Predicting "rare" events (i.e. when the proportion of one of the two outcomes large) is difficult and requires independent (predictor) variables that strongly associated with the dependent (outcome) variable.
+
+---
+# Fitted Values Revisited 
+
+What happens when the ratio of true-to-false increases (i.e. want to predict "rare" events)?
+
+Let's simulate a dataset where the ratio of true-to-false is 10-to-1. We can also define the distribution of the dependent variable. Here, there is moderate separation in the distributions.
+
+```{r, echo = FALSE}
+library(multilevelPSA)
+getSimulatedData <- function(nvars=3,
+							 ntreat=100, treat.mean=.6, treat.sd=.5,
+							 ncontrol=1000, control.mean=.4, control.sd=.5) {
+	if(length(treat.mean) == 1) { treat.mean = rep(treat.mean, nvars) }
+	if(length(treat.sd) == 1) { treat.sd = rep(treat.sd, nvars) }
+	if(length(control.mean) == 1) { control.mean = rep(control.mean, nvars) }
+	if(length(control.sd) == 1) { control.sd = rep(control.sd, nvars) }
+	
+	df <- c(rep(0, ncontrol), rep(1, ntreat))
+	for(i in 1:nvars) {
+		df <- cbind(df, c(rnorm(ncontrol, mean=control.mean[i], sd=control.sd[i]),
+						  rnorm(ntreat, mean=treat.mean[i], sd=treat.sd[i])))
+	}
+	df <- as.data.frame(df)
+	names(df) <- c('treat', letters[1:nvars])
+	return(df)
+}
+```
+
+```{r message=FALSE, results = 'hide'}
+test.df2 <- getSimulatedData(
+	treat.mean=.6, control.mean=.4)
+```
+
+The `multilevelPSA::psrange` function will sample with varying ratios from 1:10 to 1:1. It takes multiple samples and averages the ranges and distributions of the fitted values from logistic regression.
+
+```{r, results = 'hide'}
+psranges2 <- psrange(test.df2, test.df2$treat, treat ~ .,
+					 samples=seq(100,1000,by=100), nboot=20)
+```
+
+---
+# Fitted Values Revisited (cont.)
+
+```{r, fig.height = 7}
+plot(psranges2)
+```
+
+---
+# Additional Resources
+
+
+* [The Path to Log Likelihood](https://jbryer.github.io/VisualStats/articles/log_likelihood.html)
+
+* [Visual Introduction to Maximum Likelihood Estimation](https://jbryer.github.io/VisualStats/articles/mle.html)
+
+* [VisualStats R Package](https://jbryer.github.io/VisualStats/index.html)
+
+* [Logistic Regression Details Pt 2: Maximum Likelihood](https://www.youtube.com/watch?v=BfKanl1aSG0)
+
+* [StatQuest: Maximum Likelihood, clearly explained](https://www.youtube.com/watch?v=XepXtl9YKwc)
+
+* [Probability concepts explained: Maximum likelihood estimation](https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1)
+
+---
+class: left, font140
+# One Minute Paper
+
+Complete the one minute paper: 
+`r one_minute_paper`
+
+1. What was the most important thing you learned during this class?
+2. What important question remains unanswered for you?
+
