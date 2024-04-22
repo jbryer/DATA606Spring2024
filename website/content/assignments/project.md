@@ -32,6 +32,7 @@ The proposal can be more informal using bullet points where necessary and includ
 
 * You are required to attend ONLY ONE of those time slots. You will do your presentation, watch the other presentations, and provide peer feedback (will be shared anonymously afterward).
 
+[Example project slide deck](/slides/Example_Project_Slides.html#1)
 
 #### Checklist / Suggested Outline
 
