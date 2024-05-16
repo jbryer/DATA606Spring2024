@@ -2,7 +2,7 @@
 title: "DATA 606 Presentations"
 subtitle: "Statistics & Probability for Data Analytics"
 # author: Jason Bryer, Ph.D. and Angela Lui, Ph.D.
-date: "Fall 2023"
+date: "Spring 2024"
 output:
   xaringan::moon_reader:
     css: ["assets/mtheme_max.css", "assets/fonts_mtheme_max.css"]
@@ -54,10 +54,10 @@ class: font100
 
 * We will record the session for our records but will not post the recording.
 
-* Complete the peer feedback form for each presentations: https://forms.gle/uPtWHa6AG9U5xbV97
+* Complete the peer feedback form for each presentations: https://forms.gle/m6GFDKgJvRq19AyQ6
 
 * You will receive your feedback from us and peers (anonymized) after all the presentations have been done.
 
-* Only need to submit your abstract to Blackboard *only if* it is not in you slide deck.
+* Submit a PDF of your slides and abstract to Blackboard.
 
 * Good luck!
